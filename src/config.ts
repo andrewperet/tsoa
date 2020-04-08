@@ -124,6 +124,11 @@ export interface SwaggerConfig {
    * An array of path globs that point to your route controllers that you would like to have tsoa include. You can provide this config on either the SwaggerConfig or the RoutesConfig
    */
   controllerPathGlobs?: string[];
+
+  /**
+   * The type of content that gets applied to the swagger request body.
+   */
+  responseBodyContentType?: 'application/x-www-form-urlencoded' | 'application/json';
 }
 
 export interface RoutesConfig {

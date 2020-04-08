@@ -267,11 +267,18 @@ export class SpecGenerator3 extends SpecGenerator {
       };
     }
 
-    return {
-      content: {
-        'application/json': { schema } as Swagger.MediaType,
-      },
-    } as Swagger.RequestBody;
+    if (parameter.type.dataType === 'nestedObjectLiteral') {
+      schema.properties = this.buildProperties(parameter.type.properties);
+      schema.required = parameter.type.properties.filter(p => p.required).map(p => p.name);
+    }
+
+    this.config.responseBodyContentType;
+
+    const returnObject = { content: {} };
+
+    returnObject.content[this.config.responseBodyContentType ? this.config.responseBodyContentType : 'application/json'] = { schema } as Swagger.MediaType;
+
+    return returnObject as Swagger.RequestBody;
   }
 
   private buildParameter(source: Tsoa.Parameter): Swagger.Parameter {

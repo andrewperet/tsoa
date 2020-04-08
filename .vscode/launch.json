@@ -4,6 +4,14 @@
         {
             "type": "node",
             "request": "launch",
+            "name": "Run Sample Swagger Generation",
+            "program": "${workspaceFolder}/src/sample/run-sample.ts",
+            "preLaunchTask": "build",
+            "outFiles": ["${workspaceFolder}/dist/**/*.js"]
+        },
+        {
+            "type": "node",
+            "request": "launch",
             "name": "Mocha TS Tests",
             "program": "${workspaceFolder}/node_modules/mocha/bin/_mocha",
             "env": {
