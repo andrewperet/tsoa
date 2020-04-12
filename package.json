@@ -1,5 +1,5 @@
 {
-  "name": "tsoa-ap",
+  "name": "tsoa",
   "description": "Build swagger-compliant REST APIs using TypeScript and Node",
   "version": "2.5.13",
   "main": "./dist/index.js",
@@ -107,7 +107,7 @@
     "url": "https://github.com/lukeautry/tsoa.git"
   },
   "bin": {
-    "tsoa-ap": "dist/cli.js"
+    "tsoa": "dist/cli.js"
   },
   "engines": {
     "yarn": ">=1.9.4",
